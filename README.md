@@ -12,7 +12,7 @@ The source code is released under Apache 2.0 (https://aws.amazon.com/apache-2-0/
 
 ## Installation
 
-The DeepRacer device comes with all the pre-requisite packages, build systems and libraries installed to build and run the device_info_pkg. More details about pre installed set of packages and libraries on the DeepRacer can be found in the [Getting Started](https://github.com/aws-racer/aws-deepracer-launcher/blob/main/getting-started.md) section of the AWS DeepRacer Opensource page.
+The DeepRacer device comes with all the pre-requisite packages, build systems and libraries installed to build and run the device_info_pkg. More details about pre installed set of packages and libraries on the DeepRacer, and installing required build systems can be found in the [Getting Started](https://github.com/aws-racer/aws-deepracer-launcher/blob/main/getting-started.md) section of the AWS DeepRacer Opensource page.
 
 The device_info_pkg specifically depends on the following ROS2 packages as build and execute dependencies:
 
@@ -28,21 +28,26 @@ Open up a terminal on the DeepRacer device and run the following commands as roo
 
 1. Create a workspace directory for the package:
 
-        mkdir deepracer_ws
-        cd deepracer_ws
+        mkdir -p ~/deepracer_ws
+        cd ~/deepracer_ws
 
-1. Clone the device_info_pkg and the deepracer_interfaces_pkg on the DeepRacer device:
+1. Clone the device_info_pkg on the DeepRacer device:
 
-        git clone https://github.com/aws-racer/aws-deepracer-interfaces-pkg
-        git clone https://github.com/aws-racer/aws-deepracer-device-info-pkg
+        git clone https://github.com/aws-racer/aws-deepracer-device-info-pkg.git
+
+1. Fetch unreleased dependencies:
+
+        cd ~/deepracer_ws/aws-deepracer-device-info-pkg
+        rosws update
 
 1. Resolve the device_info_pkg dependencies:
 
+        cd ~/deepracer_ws && apt-get update
         rosdep install -i --from-path . --rosdistro foxy -y
 
 1. Build the device_info_pkg and deepracer_interfaces_pkg:
 
-        colcon build --packages-select device_info_pkg deepracer_interfaces_pkg
+        cd ~/deepracer_ws && colcon build --packages-select device_info_pkg deepracer_interfaces_pkg
 
 ## Usage
 
@@ -54,7 +59,7 @@ To launch the built device_info_node as root user on the DeepRacer device open u
 
 1. Navigate to the deepracer workspace:
 
-        cd deepracer_ws
+        cd ~/deepracer_ws
 
 1. Source the ROS2 Foxy setup bash script:
 
@@ -62,7 +67,7 @@ To launch the built device_info_node as root user on the DeepRacer device open u
 
 1. Source the setup script for the installed packages:
 
-        source install/setup.bash 
+        source ~/deepracer_ws/install/setup.bash 
 
 1. Launch the device_info_node using the launch script:
 
