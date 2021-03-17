@@ -97,3 +97,6 @@ The  device_info_pkg_launch.py is also included in this package that gives an ex
 | ---------- | ------------ | ----------- |
 |get_device_info|GetDeviceInfoSrv|A service that is called to get the DeepRacer hardware and software packages version information.|
 
+## Resources
+
+* AWS DeepRacer Opensource getting started: [https://github.com/awsdeepracer/aws-deepracer-launcher/blob/main/getting-started.md](https://github.com/awsdeepracer/aws-deepracer-launcher/blob/main/getting-started.md)
