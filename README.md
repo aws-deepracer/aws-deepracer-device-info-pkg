@@ -12,11 +12,11 @@ The source code is released under Apache 2.0 (https://aws.amazon.com/apache-2-0/
 
 ## Installation
 
-The AWS DeepRacer device comes with all the prerequisite packages and libraries installed to run the `device_info_pkg`. For more information about the pre-installed set of packages and libraries on the AWS DeepRacer and about installing the required build systems, see [Getting started with AWS DeepRacer OpenSource](https://github.com/aws-deepracer/aws-deepracer-launcher/blob/main/getting-started.md).
+The AWS DeepRacer device comes with all the prerequisite packages and libraries installed to run the `device_info_pkg`. For more information about the preinstalled set of packages and libraries on the AWS DeepRacer, and about installing the required build systems, see [Getting started with AWS DeepRacer OpenSource](https://github.com/aws-deepracer/aws-deepracer-launcher/blob/main/getting-started.md).
 
-The `device_info_pkg` specifically depends on the following ROS 2 packages as build and execute dependencies:
+The `device_info_pkg` specifically depends on the following ROS 2 packages as build and run dependencies:
 
-1. `deepracer_interfaces_pkg`: This packages contains the custom message and service type definitions used across the AWS DeepRacer core application.
+1. `deepracer_interfaces_pkg`: This package contains the custom message and service type definitions used across the AWS DeepRacer core application.
 
 ## Downloading and building
 
